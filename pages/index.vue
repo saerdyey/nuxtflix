@@ -99,6 +99,23 @@
 <script>
 import axios from 'axios'
 export default {
+  head() {
+    return {
+      title: 'NuxtFLix - Latest Streaming Movies',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Get all the latest streaming movies in theaters & online',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'movies, stream, streaming',
+        },
+      ],
+    }
+  },
   data() {
     return {
       movies: [],
@@ -123,7 +140,6 @@ export default {
       result.data.results.forEach((movie) => {
         this.movies.push(movie)
       })
-      console.log('hi')
     },
     async searchMovies() {
       const data = axios.get(
@@ -143,10 +159,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  //   .loading {
-  //     padding-top: 120px;
-  //     align-items: flex-start;
-  //   }
   .loading {
     padding-top: 120px;
     align-items: flex-start;

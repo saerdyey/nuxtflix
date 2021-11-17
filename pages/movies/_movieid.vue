@@ -47,9 +47,14 @@ import axios from 'axios'
 import Loading from '../../components/Loading.vue'
 export default {
   name: 'single-movie',
+  head() {
+    return {
+      title: this.movie.title,
+    }
+  },
   data() {
     return {
-      movie: null,
+      movie: '',
     }
   },
   async fetch() {
