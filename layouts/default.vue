@@ -1,5 +1,6 @@
 <template>
   <div class="app">
-    <Nuxt />
+    <Nuxt keep-alive />
+    <Footer />
   </div>
 </template>
